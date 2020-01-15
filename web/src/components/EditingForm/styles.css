@@ -1,0 +1,83 @@
+form {
+    position: relative;
+}
+
+form i {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    color: #e74c3c;
+    cursor: pointer;
+}
+
+form .editing-button[type=submit] {
+    background-color: #f1c40f;
+}
+
+form .editing-button[type=submit]:hover {
+    background-color: #f39c12;
+}
+
+label#avatar {
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label#avatar input {
+    display: none;
+}
+
+label#avatar .currently-image{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+label#avatar .currently-image {
+    position: relative;    
+}
+
+label#avatar .img-dark {
+    position: absolute;
+    background-color: #0005;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+label#avatar .cam {
+    display: block;
+    position: absolute;
+    width: 30px;
+}
+
+label#avatar .cam.has-avatar {
+    display: none;
+}
+
+label#avatar.has-avatar .preview {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+} 
+
+label#avatar.has-avatar {
+    border: 0;
+    margin-bottom: 10px;
+}
+
+label .preview {
+    display: none;
+}
+
+label#avatar.has-avatar img {
+    display: none;
+}
+

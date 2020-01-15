@@ -11,6 +11,17 @@ const DevSchema = new mongoose.Schema({
         type: PointSchema,
         index: '2dsphere'
     }
+}, {
+    toJSON: {
+        virtuals: true,
+    }
+})
+
+DevSchema.virtual('photo_url').get(function () {
+
+    if(!/(https:)/gm.test(this.avatar_url)) {
+        return `http://localhost:3333/files/${this.avatar_url}`
+    }
 })
 
 module.exports = mongoose.model('Dev', DevSchema)

@@ -1,0 +1,55 @@
+.alert {
+    max-width: 400px;
+    height: 200px;
+    margin: auto;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.alert {
+    background-color: #f2f2f2;
+    box-shadow: 0 0 25px 0 #0004;
+}
+
+.alert strong {
+    text-align: center;
+    text-transform: capitalize;
+    color: #e74c3c;
+    font-size: 1.4rem;
+}
+
+.alert hr {
+    border: 1px solid #fff;
+}
+
+.alert .btns-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.alert button {
+    text-transform: uppercase;
+    height: 32px;
+    border-radius: 3px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.alert button:nth-child(1) {
+    background-color: #0a76db;
+}
+
+.alert button:nth-child(2) {
+    background-color: #e74c3c;
+}
