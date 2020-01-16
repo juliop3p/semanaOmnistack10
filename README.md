@@ -12,10 +12,10 @@
 
 # Web
 
-### Tela principal de registro de usuario.
+### Tela principal de registro de usuario
 ![web](https://github.com/juliop3p/SemanaOmnistack10/blob/master/imgs-readme/web-register.png)
 
-### Feature de edição e delete do dev que foi deixada como desafio.
+### Feature de edição e delete do dev que foi deixada como desafio
 ![web](https://github.com/juliop3p/SemanaOmnistack10/blob/master/imgs-readme/web-editing.png)
 
 
