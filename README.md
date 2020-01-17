@@ -4,10 +4,10 @@
 
 ### O projeto consiste em um Dev se cadastrar via web e localizar outros Devs via app de acordo com suas relações de tecnologias e sua proximidade.
 
-### Backend: Node.js, Express, MongoDB
+### Backend: Node.js, Express, MongoDB, Socket.io
 ### Frontend: ReactJS
 ### Mobile: React Native
-### Algo super interessante nesse projeto é a utilização de Geolocalização.
+### Algo super interessante nesse projeto é a utilização de Geolocalização e Tempo Real.
 
 
 # Web

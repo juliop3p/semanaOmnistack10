@@ -1,13 +1,18 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const routes = require('./routes')
 const cors = require('cors')
+const http = require('http')
+const routes = require('./routes')
+
 const path = require('path')
 const dotenv = require('dotenv')
+const { setupWebSocket } = require('./websocket')
 
 dotenv.config()
 
 const app = express()
+const server = http.Server(app)
+setupWebSocket(server)
 
 mongoose.connect(process.env.BD_URL, {
     useNewUrlParser: true,
@@ -23,4 +28,4 @@ app.use(routes)
 
 
 
-app.listen(3333, () => console.log('Server running on port 3333!'))
+server.listen(3333, () => console.log('Server running on port 3333!'))

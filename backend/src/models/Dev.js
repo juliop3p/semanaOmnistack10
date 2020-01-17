@@ -20,7 +20,7 @@ const DevSchema = new mongoose.Schema({
 DevSchema.virtual('photo_url').get(function () {
 
     if(!/(https:)/gm.test(this.avatar_url)) {
-        return `http://192.168.100.81:3333/files/${this.avatar_url}`
+        return `http://192.168.100.77:3333/files/${this.avatar_url}`
     }
 })
 

@@ -5,6 +5,7 @@ import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location'
 import { MaterialIcons } from '@expo/vector-icons'
 
 import api from '../services/api'
+import { connect, disconnect, subscribToNewDevs } from '../services/socket'
 
 export default function Main({ navigation }) {
     const [devs, setDevs] = useState([])
@@ -34,6 +35,10 @@ export default function Main({ navigation }) {
         
         loadInitialLocation()
     }, [])
+
+    useEffect(() => {
+        subscribToNewDevs(dev => setDevs([...devs, dev]))
+    }, [devs])
     
     useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -55,6 +60,17 @@ export default function Main({ navigation }) {
     };
     }, []);
 
+    const setupWebSocket = () => {
+        disconnect()
+        const { latitude, longitude } = currentRegion
+
+        connect(
+            latitude, 
+            longitude,
+            techs
+        )
+    }
+
     async function loadDevs() {
         const { latitude, longitude } = currentRegion
 
@@ -67,6 +83,7 @@ export default function Main({ navigation }) {
         })
 
         setDevs(response.data.devs)
+        setupWebSocket()
     }
 
     const handleRegionChanged = (region) => {
